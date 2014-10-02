@@ -1,3 +1,8 @@
+To do:
+- plugin.js in js folder to add all the js trigger functions
+- google style cards: vendor>appear
+
+
 ![Travis CI Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)
 
 _s
