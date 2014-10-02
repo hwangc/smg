@@ -35,12 +35,10 @@
 		?>
 	</div><!-- .entry-content -->
 	<?php 
-	echo '<footer class="entry-footer">';
-		
-		if(is_single() || is_page()) {
-			smg_entry_footer(); 
-		}
-		
-	echo '</footer><!-- .entry-footer -->';
+	if(is_single() || is_page()) {
+		echo '<footer class="entry-footer">';
+		smg_entry_footer(); 
+		echo '</footer><!-- .entry-footer -->';
+	}
 	?>
 </article><!-- #post-## -->

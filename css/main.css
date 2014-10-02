@@ -1,20 +1,10 @@
+body {
+  background: #f3f3f3; }
+
 .site-header {
   text-align: center; }
 
-.site-menu {
-  position: fixed;
-  z-index: 100;
-  left: 1em;
-  top: 1em; }
-
-article {
-  padding: 1em 1em 0; }
-  article.card {
-    width: 100%;
-    max-width: 400px;
-    overflow: hidden; }
-
-.home article:after, .archive article:after {
+.article-bottom-blur, .home article:after, .archive article:after {
   position: absolute;
   background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.73) 22%, rgba(255, 255, 255, 0.73) 23%, white 91%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(22%, rgba(255, 255, 255, 0.73)), color-stop(23%, rgba(255, 255, 255, 0.73)), color-stop(91%, white));
@@ -29,5 +19,19 @@ article {
   right: 0px;
   content: ''; }
 
-.site-content {
-  margin: 0 1em; }
+.home {
+  padding: 1em 1em 0; }
+  .home article.card {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden; }
+
+.site-main {
+  margin: 1em; }
+
+article {
+  padding: 1em; }
+  article.card {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden; }

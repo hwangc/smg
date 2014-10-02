@@ -2,7 +2,6 @@ To do:
 - plugin.js in js folder to add all the js trigger functions
 - vendor folder structure
 - google style cards: vendor>appear
-- slide side menu: vendor>mpmenu
 - fluid box: vendore>fluid
 
 ![Travis CI Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)

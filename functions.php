@@ -104,12 +104,6 @@ function smg_scripts() {
 
 	wp_enqueue_script( 'smg-appear', get_template_directory_uri() . '/vendor/appear/js/jquery.appear.js', array('jquery'), null, true );
 
-	wp_enqueue_script( 'smg-mlpushmenu', get_template_directory_uri() . '/vendor/mpmenu/js/mlpushmenu.js', array('smg-mlpushmenu--classie','smg-modernizr'), null, true );
-
-	wp_enqueue_script( 'smg-mlpushmenu--classie', get_template_directory_uri() . '/vendor/mpmenu/js/classie.js', array(), null, true );
-
-	wp_enqueue_script( 'smg-modernizr', get_template_directory_uri() . '/vendor/mpmenu/js/modernizr.custom.js', array(), null, true );
-
 	wp_enqueue_script( 'smg-fluid', get_template_directory_uri() . '/vendor/fluid/js/jquery.fluidbox.min.js', array('jquery'), null, true );
 
 	wp_enqueue_script( 'smg-plugin', get_template_directory_uri() . '/js/plugin.js', array('jquery','smg-appear'), null, true );
@@ -144,8 +138,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * nav walker for mpmenu.
- */
-require get_template_directory() . '/inc/nav-walker.php';

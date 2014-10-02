@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package SMG
+ * @package smg
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -14,58 +14,23 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
 <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
-	<div id="page" class="container hfeed site">
-		<!-- Push Wrapper -->
-		<div class="mp-pusher" id="mp-pusher">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'smg' ); ?></a>
 
-			<!-- mp-menu -->
-			<nav id="mp-menu" class="mp-menu">
-				<?php    /**
-					* Displays a navigation menu
-					* @param array $args Arguments
-					*/
-					$args = array(
-						'theme_location' => 'primary',
-						'menu' => '',
-						'container' => 'div',
-						'container_class' => 'mp-level',
-						'container_id' => '',
-						'menu_class' => '',
-						'menu_id' => '',
-						'echo' => true,
-						'fallback_cb' => 'wp_page_menu',
-						'before' => '',
-						'after' => '',
-						'link_before' => '',
-						'link_after' => '',
-						'items_wrap' => '<h2 class="icon icon-world">All Categories</h2><ul id = "%1$s" class = "%2$s">%3$s</ul>',
-						'depth' => 0,
-						'walker' => new hwangc_nav_walker
-					);
-				
-					wp_nav_menu( $args ); ?>
-					
-			</nav>
-			
-			<div class="scroller"><!-- this is for emulating position fixed of the nav -->
-				<div class="scroller-inner">
-					
-					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'hwangc' ); ?></a>
-					<span class="site-menu"><a href="#" id="trigger" class="">Open/Close Menu</a></span>
-					<header class="site-header" role="banner">
-						<div class="site-branding">
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<h2 class=""><?php bloginfo( 'description' ); ?></h2>
-							<p class="">
-								<abbr class="loaded timeago">when you opened the page</abbr>
-							</p>
-							
-						</div>
-					</header><!-- #masthead -->
-					
-					<div class="clear"></div>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div>
 
-					<div id="content" class="site-content">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
