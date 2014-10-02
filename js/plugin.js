@@ -2,7 +2,7 @@
 	/****************************************
 	 * google style appear
 	 ****************************************/
-	$(document.body).on('appear', '.card', function(e, $affected) {
+	$(document.body).on('appear', '.card', function() {
 		// add class called “appeared” for each appeared element
 		$(this).addClass("appeared");
 	});
@@ -33,7 +33,9 @@
 	 * 
 	 ****************************************/
 	
-	/****************************************
-	 * 
-	 ****************************************/
 })(jQuery);
+
+/****************************************
+ * mpmenu
+ ****************************************/
+new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
