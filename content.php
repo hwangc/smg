@@ -17,22 +17,30 @@
 
 	<div class="entry-content">
 		<?php
+		if(is_single() || is_page()){
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
 				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'smg' ), 
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
-		?>
-
-		<?php
+		
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'smg' ),
 				'after'  => '</div>',
 			) );
+		}
+		else {
+			the_excerpt();
+		}
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php smg_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php 
+	echo '<footer class="entry-footer">';
+		
+		if(is_single() || is_page()) {
+			smg_entry_footer(); 
+		}
+		
+	echo '</footer><!-- .entry-footer -->';
+	?>
 </article><!-- #post-## -->

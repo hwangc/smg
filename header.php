@@ -54,15 +54,15 @@
 				<div class="scroller-inner">
 					
 					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'hwangc' ); ?></a>
-
-					<header id="masthead" class="header--fixed site-header" role="banner">
+					<span class="site-menu"><a href="#" id="trigger" class="">Open/Close Menu</a></span>
+					<header class="site-header" role="banner">
 						<div class="site-branding">
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<h2 class="feature__title"><?php bloginfo( 'description' ); ?></h2>
-							<p class="feature__subtitle">
+							<h2 class=""><?php bloginfo( 'description' ); ?></h2>
+							<p class="">
 								<abbr class="loaded timeago">when you opened the page</abbr>
 							</p>
-							<p><a href="#" id="trigger" class="menu-trigger">Open/Close Menu</a></p>
+							
 						</div>
 					</header><!-- #masthead -->
 					

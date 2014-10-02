@@ -94,7 +94,9 @@ add_action( 'widgets_init', 'smg_widgets_init' );
 function smg_scripts() {
 	wp_enqueue_style( 'smg-style', get_stylesheet_uri() );
 	
-	wp_enqueue_style( 'smg-vendor', get_template_directory_uri() . '/vendor/vendor.css', array('smg-style'), null, all );
+	wp_enqueue_style( 'smg-vendor', get_template_directory_uri() . '/css/vendor.css', array('smg-style'), null, all );
+	
+	wp_enqueue_style( 'smg-main', get_template_directory_uri() . '/css/main.css', array('smg-style'), null, all );
 
 	// wp_enqueue_script( 'smg-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
