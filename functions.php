@@ -104,7 +104,7 @@ function smg_scripts() {
 
 	wp_enqueue_script( 'smg-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-	wp_enqueue_script( 'smg-appear', get_template_directory_uri() . '/vendor/appear/js/jquery.appear.js', array('jquery'), null, true );
+	wp_enqueue_script( 'smg-appear', get_template_directory_uri() . '/vendor/card/js/jquery.appear.js', array('jquery'), null, true );
 
 	wp_enqueue_script( 'smg-fluid', get_template_directory_uri() . '/vendor/fluid/js/jquery.fluidbox.min.js', array('jquery'), null, true );
 

@@ -12,11 +12,14 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'smg' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'smg' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'smg' ), 'smg', '<a href="http://hwangc.com" rel="designer">HwangC</a>' ); ?>
+			<a href="<?php echo esc_url( __( 'http://newharvestsarang.org/', 'smg' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'smg' ), 'NHM' ); ?></a>
+			<br>
+			<?php printf( __( 'Made by %1$s.', 'smg' ), '<a href="http://hwangc.com" rel="designer">HwangC</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+	<nav id="site-navigation" role="navigation">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary','container' => false, ) ); ?>
+	</nav><!-- #site-navigation -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
