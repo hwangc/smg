@@ -19,12 +19,10 @@ body {
   right: 0px;
   content: ''; }
 
-.home {
-  padding: 1em 1em 0; }
-  .home article.card {
-    width: 100%;
-    max-width: 600px;
-    overflow: hidden; }
+.home article.card {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden; }
 
 .site-main {
   margin: 1em; }
@@ -35,3 +33,62 @@ article {
     width: 100%;
     max-width: 600px;
     overflow: hidden; }
+
+/*menu button*/
+#hamburger {
+  display: block;
+  width: 40px;
+  height: 36px;
+  margin: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2; }
+
+#hamburger:before,
+#hamburger:after,
+#hamburger span {
+  background: royalblue;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 6px;
+  position: absolute;
+  left: 5px; }
+
+#hamburger:before {
+  top: 5px; }
+
+#hamburger:after {
+  bottom: 5px; }
+
+#hamburger span {
+  top: 50%;
+  margin-top: -3px; }
+
+/* Hamburger animation */
+#hamburger:before,
+#hamburger:after,
+#hamburger span {
+  transition: none 0.5s ease 0.5s;
+  transition-property: transform, top, bottom, left, opacity; }
+
+html.mm-opening #hamburger span {
+  left: -50px;
+  opacity: 0; }
+
+html.mm-opening #hamburger:before {
+  transform: rotate(45deg);
+  top: 15px; }
+
+html.mm-opening #hamburger:after {
+  transform: rotate(-45deg);
+  bottom: 15px; }
+
+.mm-list li:before {
+  position: absolute;
+  top: 1em;
+  left: 10px; }
+
+.mm-list > li > a, .mm-list > li > span {
+  padding-left: 30px; }

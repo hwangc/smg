@@ -14,9 +14,24 @@
 	 ****************************************/
 	$('a').fluidbox();
 	/****************************************
-	 * 
+	 * mmenu
 	 ****************************************/
-	
+	$(document).ready(function() {
+		$("#site-navigation").mmenu({
+			"classes": "mm-zoom-panels",
+			"counters": true,
+			 "footer": {
+                  "add": true,
+                  "title": "SMG"
+               },
+               "header": {
+                  "title": "Menu",
+                  "add": true,
+                  "update": true
+               },
+               "searchfield": true
+		});
+	});
 	/****************************************
 	 * 
 	 ****************************************/

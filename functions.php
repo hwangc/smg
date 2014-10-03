@@ -98,6 +98,8 @@ function smg_scripts() {
 	
 	wp_enqueue_style( 'smg-main', get_template_directory_uri() . '/css/main.css', array('smg-style'), null, all );
 
+	wp_enqueue_style( 'smg-fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array('smg-style'), null, all );
+
 	// wp_enqueue_script( 'smg-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'smg-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -105,6 +107,8 @@ function smg_scripts() {
 	wp_enqueue_script( 'smg-appear', get_template_directory_uri() . '/vendor/appear/js/jquery.appear.js', array('jquery'), null, true );
 
 	wp_enqueue_script( 'smg-fluid', get_template_directory_uri() . '/vendor/fluid/js/jquery.fluidbox.min.js', array('jquery'), null, true );
+
+	wp_enqueue_script( 'smg-mmenu', get_template_directory_uri() . '/vendor/mmenu/js/jquery.mmenu.min.all.js', array('jquery'), null, true );
 
 	wp_enqueue_script( 'smg-plugin', get_template_directory_uri() . '/js/plugin.js', array('jquery','smg-appear'), null, true );
 	
