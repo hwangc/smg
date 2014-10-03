@@ -10,7 +10,7 @@
 	5.2 Menus
 6.0 Footer
 7.0 Page Effect
-8.0 
+8.0 Comments
 9.0 
 10.0 
 11.0 
@@ -21,7 +21,7 @@
 1.0 Reset
 --------------------------------------------------------------*/
 body {
-	background: url('../vendor/bgpattern/noisy_grid.png') repeat;
+	background: white;
 }
 /*--------------------------------------------------------------
 2.0 Header
@@ -59,10 +59,8 @@ body {
 }
 .home,.archive,.search {
 	article {
-		&.card {
-			overflow: hidden;
-		}
 		section{
+			overflow: hidden;
 			&:after {
 				@extend .article-bottom-blur;
 			}
@@ -78,7 +76,6 @@ body {
 	}
 }
 article {
-	padding:0.5em;
 	&.card {
 		width: 100%;
 		background: rgba(143, 188, 143, 0.3);
@@ -88,7 +85,7 @@ article {
 4.0 Content
 --------------------------------------------------------------*/
 .site-main {
-	margin: 1em;
+	margin: 0.3em;
 }
 
 /*--------------------------------------------------------------
@@ -103,12 +100,11 @@ article {
 	display: block;
 	width: 40px;
 	height: 36px;
-	margin: 20px;
+	margin: 20px 0.1em;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 2;
-	background: white;
 }
 #hamburger:before,
 #hamburger:after,
@@ -194,19 +190,22 @@ footer {
 }
 nav.navigation.paging-navigation,nav.navigation.post-navigation,div.comments-area {
 	max-width: 800px;
-	margin: 0 auto;
+	margin: 2em auto;
 }
 /*--------------------------------------------------------------
 7.0 Page Effect
 --------------------------------------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,800|Lora:400italic|Playfair+Display:700);
 .paper {
-    font: normal 12px/1.5 "Lucida Grande", arial, sans-serif;
+    // font: normal 12px/1.5 "Lucida Grande", arial, sans-serif;
+    font-family: Raleway, Arial, sans-serif;
+    // font-size: 24px;
     height: 100%;
     margin: 0 auto;
     padding: 6px 5px 4px 42px;
     position: relative;
     color: #444;
-    line-height: 20px;
+    // line-height: 32px;
     border: 1px solid #d2d2d2;
  
     background: #fff;
@@ -250,7 +249,7 @@ nav.navigation.paging-navigation,nav.navigation.post-navigation,div.comments-are
     position: absolute;
     background: rgba(255,255,255,1);
     top: 1.5em;
-    left: 1.3em;
+    left: 8px;
     z-index: 10;
     -webkit-box-shadow: 
         inset 2px 2px 5px rgba(125,125,125,1);
@@ -262,8 +261,8 @@ nav.navigation.paging-navigation,nav.navigation.post-navigation,div.comments-are
 
 .paper h1,
 .paper h2 {
-    font-size: 16px;
-    line-height: 16px;
+    // font-size: 16px;
+    // line-height: 16px;
     margin: 0 0 4px;
 }
 .paper h3,
@@ -280,3 +279,7 @@ nav.navigation.paging-navigation,nav.navigation.post-navigation,div.comments-are
 .paper p {margin: 0 0 20px;}
 .paper p:last-child {margin: 0;}
 .paper ul {margin: 0 0 20px;}
+
+/*--------------------------------------------------------------
+8.0 Comments
+--------------------------------------------------------------*/

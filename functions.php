@@ -110,6 +110,8 @@ function smg_scripts() {
 
 	wp_enqueue_script( 'smg-mmenu', get_template_directory_uri() . '/vendor/mmenu/js/jquery.mmenu.min.all.js', array('jquery'), null, true );
 
+	wp_enqueue_script( 'smg-flowtype', get_template_directory_uri() . '/vendor/flowtype/js/flowtype.js', array('jquery'), null, true );
+
 	wp_enqueue_script( 'smg-plugin', get_template_directory_uri() . '/js/plugin.js', array('jquery','smg-appear'), null, true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -122,6 +124,11 @@ add_action( 'wp_enqueue_scripts', 'smg_scripts' );
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * SMG custom functions
+ */
+require get_template_directory() . '/vendor/vendor.php';
 
 /**
  * Custom template tags for this theme.
