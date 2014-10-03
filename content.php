@@ -12,6 +12,13 @@
 		<div class="entry-meta">
 			<?php smg_posted_on(); ?>
 		</div><!-- .entry-meta -->
+		<div>
+			<?php 
+			if(!is_singular('page','post' )){
+				smg_entry_footer(); 
+			}
+			?>
+		</div>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
