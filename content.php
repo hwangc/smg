@@ -11,12 +11,12 @@
 
 			<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php smg_posted_on(); ?>
+				<?php //smg_posted_on(); ?>
 			</div><!-- .entry-meta -->
 			<div>
 				<?php 
 				if(!is_singular('page','post' )){
-					smg_entry_footer(); 
+					//smg_entry_footer(); 
 				}
 				?>
 			</div>
@@ -43,11 +43,11 @@
 			?>
 		</div><!-- .entry-content -->
 		<?php 
-		if(is_single() || is_page()) {
-			echo '<footer class="entry-footer">';
-			smg_entry_footer(); 
-			echo '</footer><!-- .entry-footer -->';
-		}
+		// if(is_single() || is_page()) {
+		// 	echo '<footer class="entry-footer">';
+		// 	smg_entry_footer(); 
+		// 	echo '</footer><!-- .entry-footer -->';
+		// }
 		?>
 	</section>
 </article><!-- #post-## -->

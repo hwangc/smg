@@ -259,10 +259,11 @@ nav.navigation.paging-navigation,nav.navigation.post-navigation,div.comments-are
         inset 2px 2px 5px rgba(125,125,125,1);
 }
 
-.paper h1,
+.paper h1 {
+	font-size: 32px;
+}
 .paper h2 {
-    // font-size: 16px;
-    // line-height: 16px;
+    font-size: 20px;
     margin: 0 0 4px;
 }
 .paper h3,

@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * smg posted on
  */
 function smg_posted_on() {
@@ -32,3 +32,19 @@ function smg_posted_on() {
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
 
 }
+
+/*
+ * smg excerpt
+ */
+
+function smg_excerpt($length) {
+	return 40;
+}
+
+add_filter( 'excerpt_length', 'smg_excerpt', 999 );
+
+function smg_excerpt_more($more) {
+    global $post;
+	return '<span style="color:red;font-weight:bolder;">...</span>';
+}
+add_filter('excerpt_more', 'smg_excerpt_more');
