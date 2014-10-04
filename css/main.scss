@@ -240,7 +240,7 @@ nav.navigation.paging-navigation,nav.navigation.post-navigation,div.comments-are
     border: 1px solid;
     border-color: transparent #efe4e4;
 }
-.site-main>article::before {    
+.site-main article:before {    
     content: '';
     display: block;
     width: 20px;
