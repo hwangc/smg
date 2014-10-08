@@ -12,13 +12,13 @@
 	/****************************************
 	 * fluid
 	 ****************************************/
-	$('a').fluidbox();
+	$('.single .entry-content a').fluidbox();
 	/****************************************
 	 * mmenu
 	 ****************************************/
 	$(document).ready(function() {
 		$("#site-navigation").mmenu({
-			"classes": "mm-zoom-panels",
+			"classes": "mm-light mm-zoom-panels",
 			"counters": true,
 			 "footer": {
                   "add": true,
@@ -28,9 +28,11 @@
                   "title": "Menu",
                   "add": true,
                   "update": true
-               },
-               "searchfield": true
+               }
 		});
+		$(".mm-close-menu").click(function() {
+        	$("#site-navigation").trigger("close.mm");
+      	});
 	});
 	/****************************************
 	 * flowtype
@@ -43,13 +45,18 @@
 		fontRatio : 30
 	});
 	/****************************************
-	 * 
+	 * wp admin bar height
 	 ****************************************/
-	
+	 $(document).ready(function($){                                                             
+	 	var $wpAdminBar = $('#wpadminbar');
+	 	if ($wpAdminBar.length) {
+	 		$("div#page").css('margin-top','32px');
+	 	}    
+	 }); 
 	/****************************************
-	 * 
+	 * dropdown
 	 ****************************************/
-	
+	$( '.gfield_select' ).dropdown();
 	/****************************************
 	 * 
 	 ****************************************/

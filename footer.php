@@ -16,9 +16,10 @@
 			<br>
 			<?php printf( __( 'Made by %1$s.', 'smg' ), '<a href="http://hwangc.com" rel="designer">HwangC</a>' ); ?>
 		</div><!-- .site-info -->
+		
 	</footer><!-- #colophon -->
-	<nav id="site-navigation" role="navigation">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary','container' => false, ) ); ?>
+	<nav id="site-navigation" class="smg-navigation" role="navigation">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary','container' => false, 'items_wrap' => '<li class="mm-close-menu"><i class="fa fa-times"></i></li><ul id="%1$s" class="%2$s">%3$s</ul>' ) ); ?>
 	</nav><!-- #site-navigation -->
 </div><!-- #page -->
 

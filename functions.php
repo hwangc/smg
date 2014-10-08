@@ -38,7 +38,7 @@ function smg_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -111,6 +111,10 @@ function smg_scripts() {
 	wp_enqueue_script( 'smg-mmenu', get_template_directory_uri() . '/vendor/mmenu/js/jquery.mmenu.min.all.js', array('jquery'), null, true );
 
 	wp_enqueue_script( 'smg-flowtype', get_template_directory_uri() . '/vendor/flowtype/js/flowtype.js', array('jquery'), null, true );
+	
+	wp_enqueue_script( 'smg-modernizr', get_template_directory_uri() . '/vendor/dropdown/js/modernizr.custom.js', array('jquery'), null, true );
+
+	wp_enqueue_script( 'smg-dropdown', get_template_directory_uri() . '/vendor/dropdown/js/jquery.dropdown.js', array('jquery','smg-modernizr'), null, true );
 
 	wp_enqueue_script( 'smg-plugin', get_template_directory_uri() . '/js/plugin.js', array('jquery','smg-appear'), null, true );
 	

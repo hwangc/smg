@@ -9,8 +9,8 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
+		<article class="card">
+			<section class="error-404 not-found paper">
 				<header class="page-header">
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'smg' ); ?></h1>
 				</header><!-- .page-header -->
@@ -49,7 +49,7 @@ get_header(); ?>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
-
+		</article>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

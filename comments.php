@@ -43,6 +43,9 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'avatar_size' => 60,
+					'callback' => 'smg_comment',
+					'reply_text' => '<i class="fa fa-comment-o"></i> Reply',
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -64,6 +67,11 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'smg' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form(
+		array('cancel_reply_link'=>'<i class="fa fa-times-circle"></i> Cancel',
+			'title_reply' =>'',
+			'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment ', 'noun' ) . '</label><i class="fa fa-comment-o"></i><textarea id="comment" name="comment" cols="45" rows="4" aria-required="true"></textarea></p>',
+			'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( '<i class="fa fa-user"></i> <a href="%1$s">%2$s</a>' ), admin_url( 'profile.php' ), $user_identity ) . '</p>'
+	)); ?>
 
 </div><!-- #comments -->

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms version="1.7.12">
+	<form labelPlacement="top_label" useCurrentUserAsAuthor="1" postAuthor="1" postCategory="55" postFormat="0" postStatus="pending">
+		<title><![CDATA[Member Post]]></title>
+		<description><![CDATA[Post submitted by members]]></description>
+		<descriptionPlacement><![CDATA[below]]></descriptionPlacement>
+		<button type="text">
+			<text><![CDATA[Submit]]></text>
+		</button>
+		<fields>
+			<field id="1" isRequired="1" size="large" type="post_title">
+				<cssClass><![CDATA[form-alignleft]]></cssClass>
+				<label><![CDATA[Title]]></label>
+			</field>
+			<field id="3" isRequired="1" size="large" type="post_category" displayAllCategories="1" inputType="select">
+				<cssClass><![CDATA[cd-select]]></cssClass>
+				<label><![CDATA[Category]]></label>
+				<categoryInitialItem><![CDATA[Select a category]]></categoryInitialItem>
+				<categoryInitialItemEnabled><![CDATA[1]]></categoryInitialItemEnabled>
+			</field>
+			<field id="2" isRequired="1" size="medium" type="post_content">
+				<label><![CDATA[Content]]></label>
+			</field>
+			<field id="5" isRequired="1" size="large" type="post_tags">
+				<description><![CDATA[ex: pray, outreach, help, bible, etc]]></description>
+				<cssClass><![CDATA[form-alignleft]]></cssClass>
+				<label><![CDATA[Tags]]></label>
+			</field>
+			<field id="4" size="medium" type="post_image">
+				<label><![CDATA[Featured Image]]></label>
+				<allowedExtensions><![CDATA[jpg, jpeg, png, gif]]></allowedExtensions>
+				<postFeaturedImage><![CDATA[1]]></postFeaturedImage>
+			</field>
+		</fields>
+		<enableHoneypot><![CDATA[1]]></enableHoneypot>
+		<enableAnimation><![CDATA[1]]></enableAnimation>
+		<requireLogin><![CDATA[1]]></requireLogin>
+		<requireLoginMessage><![CDATA[You need to <a href="http://jesuswalkswith.me/profile/login/?redirect_to=http://jesuswalkswith.me/bookmark/">login</a> or <a href="http://jesuswalkswith.me/profile/register/">register</a> to submit your post.]]></requireLoginMessage>
+		<confirmations>
+			<confirmation id="54319de615fb6" isDefault="1" type="message">
+				<name><![CDATA[Default Confirmation]]></name>
+				<message><![CDATA[Thank you for sharing your story.
+
+We will review the post and if no problem, your post "<strong>{Title:1}</strong>" will be published shortly. :)
+
+<ul>
+<li><a href="/">Go Home</a></li>
+<li><a href="/profile">Go to my profile</a></li>
+<li><a href="/submit-post/">Go Back to submit post</a></li>
+</ul>]]></message>
+			</confirmation>
+		</confirmations>
+		<notifications>
+			<notification id="54319de615bd3">
+				<to><![CDATA[{admin_email}]]></to>
+				<name><![CDATA[Admin Notification]]></name>
+				<event><![CDATA[form_submission]]></event>
+				<toType><![CDATA[email]]></toType>
+				<subject><![CDATA[New submission from {form_title}]]></subject>
+				<message><![CDATA[{all_fields}]]></message>
+			</notification>
+		</notifications>
+	</form>
+</forms>
