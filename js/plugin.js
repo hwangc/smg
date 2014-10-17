@@ -12,7 +12,12 @@
 	/****************************************
 	 * fluid
 	 ****************************************/
-	$('.single .entry-content a').fluidbox();
+
+	$('.single .entry-content a').each(function(){
+		if($(this).parents('.tiled-gallery').length == 0) {
+			$(this).fluidbox();
+		} 
+	});
 	/****************************************
 	 * mmenu
 	 ****************************************/
@@ -20,15 +25,21 @@
 		$("#site-navigation").mmenu({
 			"classes": "mm-light mm-zoom-panels",
 			"counters": true,
-			 "footer": {
-                  "add": true,
-                  "title": "SMG"
-               },
-               "header": {
-                  "title": "Menu",
-                  "add": true,
-                  "update": true
-               }
+			"offCanvas": {
+				"position": "right"
+			},
+			"footer": {
+				"add": true,
+				"title": "JWWM"
+			},
+			"header": {
+				"title": "Menu",
+				"add": true,
+				"update": true
+			}
+		})
+		.on('opening.mm',function () {
+			$('.userpro-tip').tipsy('hide');
 		});
 		$(".mm-close-menu").click(function() {
         	$("#site-navigation").trigger("close.mm");
@@ -49,23 +60,22 @@
 	 ****************************************/
 	 $(document).ready(function($){                                                             
 	 	var $wpAdminBar = $('#wpadminbar');
-	 	if ($wpAdminBar.length) {
-	 		$("div#page").css('margin-top','32px');
-	 	}    
+	 	if ($wpAdminBar.length && $(window).width()>782) {
+	 		$("div#page, div#container").css('padding-top','32px');
+	 	}else if ($wpAdminBar.length && $(window).width()<=782) {
+	 		$("div#page, div#container").css('padding-top','46px');
+	 	}
 	 }); 
 	/****************************************
 	 * dropdown
 	 ****************************************/
-	$( '.gfield_select' ).dropdown();
+	// $( '.gfield_select' ).dropdown();
 	/****************************************
 	 * 
 	 ****************************************/
-	
-})(jQuery);
 
-/****************************************
- * 
- ****************************************/
+
+})(jQuery);
 
 /****************************************
  * 

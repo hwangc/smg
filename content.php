@@ -5,22 +5,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
-	<section class="paper">
+	<section>
 		<header class="entry-header">
 			
 			<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-			<?php if ( 'post' == get_post_type() ) : ?>
+			<?php if ( 'post' == get_post_type() || 'page' == get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php smg_posted_on(); ?>
 			</div><!-- .entry-meta -->
-			<div>
-				<?php 
-				if(!is_singular('page','post' )){
-					//smg_entry_footer(); 
-				}
-				?>
-			</div>
+
 			<?php endif; ?>
 		</header><!-- .entry-header -->
 
@@ -43,12 +37,5 @@
 			}
 			?>
 		</div><!-- .entry-content -->
-		<?php 
-		// if(is_single() || is_page()) {
-		// 	echo '<footer class="entry-footer">';
-		// 	smg_entry_footer(); 
-		// 	echo '</footer><!-- .entry-footer -->';
-		// }
-		?>
 	</section>
 </article><!-- #post-## -->

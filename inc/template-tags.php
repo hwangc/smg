@@ -102,6 +102,7 @@ function smg_entry_footer() {
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ', ', 'smg' ) );
+
 		if ( $categories_list && smg_categorized_blog() ) {
 			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'smg' ) . '</span>', $categories_list );
 		}
@@ -145,7 +146,7 @@ function smg_categorized_blog() {
 		set_transient( 'smg_categories', $all_the_cool_cats );
 	}
 
-	if ( $all_the_cool_cats > 1 ) {
+	if ( $all_the_cool_cats >= 1 ) {
 		// This blog has more than 1 category so smg_categorized_blog should return true.
 		return true;
 	} else {

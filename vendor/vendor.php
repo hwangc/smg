@@ -2,7 +2,7 @@
 /*
  * smg posted on
  */
-function smg_posted_on() {
+function smg_posted_on($author_id = 0) {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	// if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 	// 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -18,7 +18,9 @@ function smg_posted_on() {
 	$archive_year  = get_the_time('Y'); 
 	$archive_month = get_the_time('m'); 
 	$archive_day   = get_the_time('d'); 
-	$author_id = get_the_author_meta( 'ID' );
+	if(!$author_id) {
+		$author_id = get_the_author_meta( 'ID' );
+	}
 
 	$posted_on = sprintf(
 		_x( '%s', 'post date', 'hwangc' ),
@@ -27,7 +29,7 @@ function smg_posted_on() {
 
 	$byline = sprintf(
 		_x( ' by %s', 'post author', 'hwangc' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . get_avatar( $author_id, 32 ) . '</a></span>'
+		'<span class="author vcard"><a class="url fn n userpro-tip" original-title="'. get_the_author() .'" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . get_avatar( $author_id, 32 ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
@@ -81,7 +83,13 @@ function smg_comment($comment, $args, $depth) {
 	<?php endif; ?>
 	<header class="comment-header">
 		<div class="comment-author vcard">
-		<?php if ( $args['avatar_size'] != 0 ) echo '<a href="' . get_home_url( ) . '/profile/' . get_comment(get_comment_ID())->user_id . '">'.get_avatar( $comment, $args['avatar_size'] ).'</a>'; ?>
+		<?php 
+			// $home_url = get_home_url();
+			// $comment_id = get_comment_ID();
+			// $user_id = $comment_id->user_id;
+			// $avatar_img = get_avatar($comment, $args['avatar_size'] );
+
+			if ( $args['avatar_size'] != 0 ) echo '<a href="' . get_home_url( ) . '/profile/' . $comment->user_id . '">'.get_avatar( $comment, $args['avatar_size'] ).'</a>'; ?>
 		<?php printf( __( '<cite class="fn"><i class="fa fa-user"></i> %s <span class="says">says:</span></cite> ' ), get_comment_author_link() ); ?>
 		</div>
 		<?php if ( $comment->comment_approved == '0' ) : ?>
@@ -114,7 +122,7 @@ function smg_comment($comment, $args, $depth) {
  */
 function smg_allowedtags() {
     // Add custom tags to this string
-        return '<script>,<style>,<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<img>,<video>,<audio>,<strong>'; 
+        return '<script>,<style>,<br>,<em>,<i>,<ul>,<ol>,<li>,<a>,<p>,<strong>'; 
     }
 
 if ( ! function_exists( 'smg_custom_wp_trim_excerpt' ) ) : 
@@ -166,7 +174,7 @@ if ( ! function_exists( 'smg_custom_wp_trim_excerpt' ) ) :
                 //$smg_excerpt = substr_replace($smg_excerpt, $excerpt_end, $pos, 0); /* Add read more next to last word */
                 //else
                 // After the content
-                $smg_excerpt .= $excerpt_end; /*Add read more in new paragraph */
+                // $smg_excerpt .= $excerpt_end; /*Add read more in new paragraph */
 
             return $smg_excerpt;   
 
@@ -177,4 +185,16 @@ if ( ! function_exists( 'smg_custom_wp_trim_excerpt' ) ) :
 endif; 
 
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'smg_custom_wp_trim_excerpt'); 
+add_filter('get_the_excerpt', 'smg_custom_wp_trim_excerpt');
+
+
+/*
+ * Modify the footer credits for JetPack Inifite Scroll
+ */
+add_filter('infinite_scroll_credit','smg_infinite_scroll_credit');
+
+function smg_infinite_scroll_credit(){
+	$content = '<a href="http://newharvestsarang.org/" title="Proudly powered by NHM">Proudly powered by NHM</a>';
+	return $content;
+}
+/** End JetPack **/

@@ -94,11 +94,11 @@ add_action( 'widgets_init', 'smg_widgets_init' );
 function smg_scripts() {
 	wp_enqueue_style( 'smg-style', get_stylesheet_uri() );
 	
-	wp_enqueue_style( 'smg-vendor', get_template_directory_uri() . '/css/vendor.css', array('smg-style'), null, all );
+	wp_enqueue_style( 'smg-vendor', get_template_directory_uri() . '/css/vendor.css', array('smg-style'), null );
 	
-	wp_enqueue_style( 'smg-main', get_template_directory_uri() . '/css/main.css', array('smg-style'), null, all );
+	wp_enqueue_style( 'smg-main', get_template_directory_uri() . '/css/main.css', array('smg-style'), null );
 
-	wp_enqueue_style( 'smg-fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array('smg-style'), null, all );
+	wp_enqueue_style( 'smg-fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', array('smg-style'), null );
 
 	// wp_enqueue_script( 'smg-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -112,12 +112,18 @@ function smg_scripts() {
 
 	wp_enqueue_script( 'smg-flowtype', get_template_directory_uri() . '/vendor/flowtype/js/flowtype.js', array('jquery'), null, true );
 	
-	wp_enqueue_script( 'smg-modernizr', get_template_directory_uri() . '/vendor/dropdown/js/modernizr.custom.js', array('jquery'), null, true );
+	// wp_enqueue_script( 'smg-modernizr', get_template_directory_uri() . '/vendor/modallogin/js/modernizr.custom.js', array(), null, true );
 
-	wp_enqueue_script( 'smg-dropdown', get_template_directory_uri() . '/vendor/dropdown/js/jquery.dropdown.js', array('jquery','smg-modernizr'), null, true );
+	// wp_enqueue_script( 'smg-modallogin', get_template_directory_uri() . '/vendor/modallogin/js/modallogin.js', array('smg-modernizr'), null, true );
 
-	wp_enqueue_script( 'smg-plugin', get_template_directory_uri() . '/js/plugin.js', array('jquery','smg-appear'), null, true );
+	wp_enqueue_script( 'smg-classie', get_template_directory_uri() . '/vendor/articleeffect/js/classie.js', array(), null, true );
+
+	wp_enqueue_script( 'smg-plugin', get_template_directory_uri() . '/js/plugin.js', array('jquery','smg-appear','smg-classie'), null, true );
 	
+	if ( is_single() && has_post_thumbnail( )) {
+		wp_enqueue_script( 'smg-articleeffect', get_template_directory_uri() . '/vendor/articleeffect/js/articleeffect.js', array('smg-classie'), null, true );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

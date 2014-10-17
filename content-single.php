@@ -4,25 +4,18 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
-	<section class="paper">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<section>
 		<header class="entry-header">
+			<?php if(!has_post_thumbnail()): ?>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<div class="entry-meta">
 				<?php smg_posted_on(); ?>
-			</div><!-- .entry-meta -->
+			</div> <!-- .entry-meta -->
+			<?php endif; ?>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<?php 
-				if(has_post_thumbnail()) {
-					$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-					echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute( 'echo=0' ) . '">';
-					the_post_thumbnail( 'medium', array( 'class' => 'aligncenter' ) );
-					echo '</a>';
-					// the_post_thumbnail( 'large', array( 'class' => 'aligncenter' ) );
-				}
-			?>
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(
@@ -31,9 +24,11 @@
 				) );
 			?>
 			<?php 
-				if(function_exists('userpro')) {
+				if(function_exists('userpro') && is_user_logged_in()) {
 					global $userpro_fav;
+
 					echo '<div class="smg_bookmark">';
+					echo '<div class="sharedaddy"><h3 class="sd-title">Bookmark this:</h3></div>';
 					echo $userpro_fav->bookmark();
 					echo '</div>';
 				}

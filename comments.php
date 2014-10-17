@@ -71,7 +71,8 @@ if ( post_password_required() ) {
 		array('cancel_reply_link'=>'<i class="fa fa-times-circle"></i> Cancel',
 			'title_reply' =>'',
 			'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment ', 'noun' ) . '</label><i class="fa fa-comment-o"></i><textarea id="comment" name="comment" cols="45" rows="4" aria-required="true"></textarea></p>',
-			'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( '<i class="fa fa-user"></i> <a href="%1$s">%2$s</a>' ), admin_url( 'profile.php' ), $user_identity ) . '</p>'
+			'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( '<i class="fa fa-user"></i> <a href="%1$s">%2$s</a>' ), '/profile', $user_identity ) . '</p>',
+			'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'Please <a href="%s">login</a> to post a comment.' ), '/profile/login' ) . '</p>'
 	)); ?>
 
 </div><!-- #comments -->

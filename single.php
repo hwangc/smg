@@ -4,8 +4,13 @@
  *
  * @package SMG
  */
-
-get_header(); ?>
+if(has_post_thumbnail()) {
+	get_header('article'); 
+	}
+else {
+	get_header();
+}
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

@@ -68,6 +68,11 @@ get_header(); ?>
 						endif;
 					?>
 				</h1>
+				<?php 
+				if(function_exists('userpro')) {
+					echo do_shortcode('[userpro template=card user=author]');
+				}
+				?>
 				<?php
 					// Show an optional term description.
 					$term_description = term_description();
